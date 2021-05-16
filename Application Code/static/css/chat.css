@@ -1,0 +1,231 @@
+:root{
+  --backColor:rgb(59,105,120);
+  --darkColor:#204051;
+  --lightColor:#e5e5e5;
+  --mediumColor:#84a9ac;
+  --skinColour:#f2dcbb;
+  --companyLogo:linear-gradient(to left, rgb(33,58,75),rgb(250,245,245));
+}
+body{
+  background-color: var(--backColor) !important;
+}
+/*----------------loading---------------
+#loading {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: block;
+  opacity: 0.7;
+  background-color: #e8ffff;
+  z-index: 99;
+  text-align: center;
+}
+
+#loading-image {
+  position: absolute;
+  top: 100px;
+  left: 240px;
+  z-index: 100;
+}
+-----------------loading done-----------------*/
+/*video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}*/
+#company{
+    font-weight:6px;
+    background-image:var(--companyLogo);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-left: 4px;
+}
+.gif{
+  margin-top:20%;
+}
+#chat-box{
+  width:100%; 
+  height:34rem;
+  /*background-image: url('/pictures/back1.jpg');*/
+  background-size: cover;
+  padding-left:0%;
+  padding-right:0px;
+  border-radius: 5px;
+}
+#chat-text::-webkit-scrollbar{
+  display: none;
+}
+#robo{
+  width:100%;
+}
+#chat-text{
+   width:100%;  height:100%;  background-color:transparent;  border:0px;  resize:none;
+}
+#mic-button{
+  border-radius:20px; padding-top:1%; padding-bottom:1%; padding-left:3%; padding-right:3%;
+}
+#mic-icon{
+  font-size:27px;
+}
+.card-footer{
+  background-color:transparent!important;
+  text-align:center;
+   margin:0;
+}
+#chat-text:focus{
+  border:0px !important;
+  outline:0px !important;
+}
+#chat-text{
+  grid-area: chat-text;
+  display: flex;
+  flex-direction:column-reverse;
+  padding:0px 20px;
+}
+.message-row{
+  margin-bottom:20px;
+}
+.chatbot-area{
+  padding: 9px 14px;
+  font-size: 1rem;
+  margin-bottom:2px;
+}
+.message-time{
+  font-size:1rem;
+  color:#777;
+}
+.you-message {
+  background-color: var(--darkColor);
+  color:#bbbbbb;
+  border:1px solid var(--lightColor);
+  border-radius:14px 14px 0 14px;
+  padding: 3%;
+  margin-bottom:2%;
+  width: 60%;
+  float: right;
+}
+.other-message{
+  background-color:#bbbbbb;
+  color:black;
+  border:1px solid var(--lightColor);
+  border-radius:14px 14px 14px 0;
+  padding: 3%;
+  width: 60%;
+  float: left;
+  margin-bottom:2%;
+}
+/* .message-row{
+  display: grid;
+  grid-template-columns:70%;
+  margin-bottom:2%;
+} */
+.chatbot-area{
+  display: grid;
+  grid-template-columns:70%;
+  margin-bottom:5%;
+  /* width: 100%;
+  height: 100%;
+  overflow: auto; */
+}
+.you-message{
+  justify-content: end;
+  justify-self: end;
+}
+.other-message{
+  justify-items: start;
+}
+/*------------------------ Nav bar starts ---------------------------------*/
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: var(--darkColor); /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: var(--lightColor);
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  /* margin-left: 50px; */
+}
+ .sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  /* margin-left: 50px; */
+}
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  /* padding: %; */
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+/* Nav bar ends */
+
+.fa-bars,#barBtn{
+  background-color:var(--backColor);
+  border: transparent;
+}
+.fa-bars{
+  font-size:30px !important;
+}
+.navbuttons{
+  background-color:var(--darkColor) !important; 
+  width:100%; 
+  padding:0.5rem;
+  text-align: center;
+  color:var(--lightColor) !important;
+ }
+ .navbuttons:hover{
+   background-color:var(--lightColor) !important;
+   color:var(--darkColor) !important;  
+ }
+ .fa-user-circle-o{
+   font-size:500% !important; 
+   color:var(--lightColor) ; 
+   margin-left:30%; 
+   margin-bottom:8%;
+ }
+ .name{
+   text-align:center;font-size:20px; color:var(--lightColor);
+ }
+ #vertical-navbar-contents{
+   text-align:center; color:white;
+ }

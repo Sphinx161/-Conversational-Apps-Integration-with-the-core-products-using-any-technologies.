@@ -1,0 +1,357 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cipherscape final</title>
+  <link rel="icon" href="{%  static 'images/logo.png' %}" type="image/icon type">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.js" integrity="sha512-4WpSQe8XU6Djt8IPJMGD9Xx9KuYsVCEeitZfMhPi8xdYlVA5hzRitm0Nt1g2AZFS136s29Nq4E4NVvouVAVrBw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.min.js" integrity="sha512-bztGAvCE/3+a1Oh0gUro7BHukf6v7zpzrAb3ReWAVrt+bVNNphcl2tDTKCBr5zk7iEDmQ2Bv401fX3jeVXGIcA==" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<style>
+    #contact{
+        width:100%; background-image: url("{% static 'images/contact-back.jpg'%}") !important;
+        background-position: center;
+        background-repeat:no-repeat;
+        background-size: cover;
+    }
+    input:focus,textarea:focus,button:focus{
+        box-shadow: none !important;
+    }
+    #getStarted:hover{
+        color:rgb(33,58,75);
+        background-color:rgb(201, 224, 240);#
+        background-color:transparent;
+        border: 2px solid rgb(33,58,75);
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+<div id="main-container" class="container-fluid-lg container-fluid-md container-fluid-sm" style="background-color:rgb(201,224,240);">
+<!--banner image tag starts here-->
+<div id="banner_image">
+  <img  src="{% static 'images/photo9.jpg' %}" style="width:100%; height:100vh; margin:0">
+ <!-- Layer tag on the photo starts here -->
+  <div id="layer">
+
+  <!-- Navbar starts here -->
+  <div class="navbar navbar-expand-lg navbar-expand-md nav_line" style="padding: 0px; height:auto;">
+    <a id="company" class="navbar-brand"style="font-weight:bold;font-family:'Yellowtail';font-size:25px; padding:0px; margin-left:6px;">CipherScape</a>
+   <button class="navbar-toggler" data-toggle="collapse" data-target="#main-nav-bar" style="float:right; margin-right:0px;">
+   <i class="fa fa-bars"></i>
+   </button>
+   <div class="collapse navbar-collapse" id="main-nav-bar" style="font-size:10px;line-height:0px;">
+        <ul class="navbar-nav ml-auto">
+           <li class="nav-item">
+                  <a class="nav-link" href="#">Home</a>
+           </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#about">About
+
+            </a>
+            </li> 
+            <li class="nav-item">
+                      <a class="nav-link" href="#review">Reviews</a>
+            </li>
+            <li class="nav-item">
+                      <a class="nav-link" href="#contact">Contact us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="modal" data-target="#myModal">SignUp &nbsp;</a>
+            </li>
+        </ul> 
+   </div><br>
+   </div>
+   <!--Navbar ends here-->
+   <!-- Text on the photo starts here -->
+       <div class="row" style="margin-top:10%;">
+        <div class="offset-lg-1 offset-md-1 offset-1"></div>
+         <div class="col-lg-7 col-md-7 col-11">
+            <div class="css-typing" id="stat">
+              <h1 style="font-size:70px; text-align:left; margin-bottom:0;">Kookie </h1>
+              <p>Our smart assistant for a <br> smart companion like you.
+              </p>
+              <button class="btn btn-default" id="getStarted">Get Started</button>
+            </div>
+         </div>
+      </div>
+   <!-- Text on the photo ends here -->
+ </div>
+ <!-- Layer tag on the photo ends here -->
+</div>   
+<!--banner image tag ends here-->
+
+<!-- Form starts here -->
+   <div class="modal fade" id="myModal">
+   	  	<div class="modal-dialog modal-lg" id="signup">
+   	  		<div class="modal-content">
+   	       <button type="button" class="close" data-dismiss="modal" style="height:40px;width:40px; background-color:#ff0000; margin-left:95%; ">&times;</button>
+   	  		<div class="modal-body" style="background-color:white; text-align:center;">
+                <div class="container mt-1" id="container">
+                  <div class="form-container sign-up-container mt-2">
+                    <form action="signup" method="post"> {% csrf_token %}
+                          <h2>Create Account</h2>
+                          <input type="text" name="createMid" id="mid" placeholder="Manager ID" />
+                          <input type="text" name="createUserName" id="username" placeholder="Username" />
+                          <input type="password" name="createPassword" id="pass" placeholder="Password" />
+                          <input type="password" name="confirmPassword" placeholder="Confirm Password" />
+                          <input type="text" name="createCompanyName" id="cname" placeholder="Company Name" />
+                          <input type="password" name="secret" id="spass" placeholder="Secret Password" />
+                          <input type="email" name="createEmail" id="memail" placeholder="Email ID" />
+                          <button class="btn btn-info btn-rounded signupBtn" id="signupBtn">Sign up</button>
+                    </form>
+
+                  </div>
+                   <!--Using this form forget about the other one-->
+                    <div class="form-container sign-in-container">
+                      <form action="signin" method="post"> {% csrf_token %}
+                        <div id="result"></div>
+                        <h1 class="font-weight:bold">Sign in</h1>
+                        <span>or use your account</span>
+
+                        <input type="email" name="email" id="emailin" placeholder="Email"/>
+                        <input type="password" name="password" id="passin" placeholder="Password"/>
+                        <button class="btn btn-info btn-rounded signinBtn" type="submit" id="signinBtn">Sign In</button>
+
+                      </form>
+                    </div>
+                    <div class="overlay-container">
+                      <div class="overlay">
+                            <div class="overlay-panel overlay-left">
+                              <h2 class="font-weight-bold">Good to see you!</h2>
+                              <p>You already have an account? <br>Sign in!</p>
+                              <button class="but" id="signIn">Sign In</button>
+                            </div>
+                            <div class="overlay-panel overlay-right">
+                              <h1 class="font-weight-bold">Hello, Friend!</h1>
+                              <p>You don't have account yet? Don't worry! You still can join us</p>
+                              <button class="but" id="signUp">Sign Up</button>
+                            </div>
+                      </div>
+                    </div>
+                  </div>
+   	  			</div>
+   	  		</div>
+   	  	</div>
+   	  </div>
+       <!-- Form ends here -->
+    <br>
+<div class="clear"></div>
+<div class="about" id="about" style="height:100vh;">
+<div class="row">
+  <!-- First half -->
+      <div class="col-lg-8 col-md-7">
+        <div class="cont-graph" style="width:100%;">
+            <section class="bar-graph bar-graph-horizontal bar-graph-one" style="width:100%;">
+                  <div class="bar-one">
+                    <span class="year">2017</span>
+                    <div class="bar" data-percentage="29.9%"></div>
+                  </div>
+                  <div class="bar-two">
+                    <span class="year">2018</span>
+                    <div class="bar" data-percentage="35.8%"></div>
+                  </div>
+                  <div class="bar-three">
+                    <span class="year">2019</span>
+                    <div class="bar" data-percentage="39.3%"></div>
+                  </div>
+                  <div class="bar-four">
+                    <span class="year">2020</span>
+                    <div class="bar" data-percentage="43.3%"></div>
+                  </div>
+                  <p>Percentage use of voice assistant by year</p>
+            </section>
+        </div><br>
+        <div class="cont-text" style="margin-left:15%; width:85%;">
+        <h1 style="text-align:center;">About</h1>
+        <p style="text-align:justify;" >Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.<p>
+      </div>
+    </div>
+<!-- Second half -->
+   <div class="col-lg-4 col-md-5">
+    <div id="meet">
+        <div id="gif">
+        <img src="{% static 'images/an2.gif' %}">
+        </div>
+        <button class="btn btn-default" id="crew">Meet our crew</button>
+    </div>  
+    </div>
+</div>    
+<br>
+<br>
+<br><br style="clear:both;">
+<div class="row" id="mis-vis" style="width:100%;">
+      <div class="offset-1"></div>
+      <div class="col-sm-2 mt-2" id="mis" style="padding-top:0px;">
+        <h4 style="text-align:center;">Our Mission</h4>
+        <h5 align="justify" style="text-align:center;font-family: 'Dancing Script', cursive; font-size:25px;">
+            Being an efficacious buddy to the work-aholic proffessionals and help them make the best out of their time.</h5>
+      </div>
+      <div class="col-sm-2" id="vis" style="margin-top:17%;">
+        <h4 style="text-align:center;">Our Vision</h4>
+        <h5 align="justify" style="text-align:center; font-family: 'Dancing Script', cursive; font-size:25px;">Our vision is to create a better everyday life for many people. Be it at home or at work.</h5>
+      </div>
+      <div class="offset-2"></div>
+      <div class="col-sm-5" id="vis">
+        <img src="{% static 'images/an1.gif' %}" style="width:100%; height:100%;">
+      </div>
+</div>
+   
+   <!-- Products section starts -->
+  <div id="review">
+    <div style="width:960px; margin: 0 auto; padding-top: 40px; padding-bottom: 40px;"> 
+    <div class="testimonial-quote group">
+       <img src="{% static 'images/t1.jpg' %}">
+        <div class="quote-container">
+            <blockquote>
+                <p>Kookie is such a handful, I loved it. It's accuracy never ceases to amaze me.”</p>
+            </blockquote>  
+            <cite><span>-Alfred Banik</span><br>
+            Graphic designer<br>
+            </cite>
+        </div>
+    </div> 
+    <br>   
+    <hr style="align:center; width:70%; ">
+    <br>
+        
+    <div class="testimonial-quote group right">
+       <img src="{% static 'images/t2.jpg' %}">
+        <div class="quote-container">
+            <div>
+                <blockquote>
+                    <p>It's my office buddy.I'm waiting for it's home version release. Finding it irresistable.”</p>
+                </blockquote>  
+                <cite><span>-Sanoh Kanha</span><br>
+                Software Devolpment Engineer<br>
+                </cite>
+            </div>
+        </div>
+    </div>
+    <br>     
+    <hr style="align:center;width:70%;"> 
+  <br>
+  <div class="testimonial-quote group">
+       <img src="{% static 'images/t3.png' %}">
+        <div class="quote-container">
+            <blockquote>
+                <p>Overall, fantastic! After I started using kookie, my work life without it has almost been impossible.”</p>
+            </blockquote>  
+            <cite><span>-Do San Nam</span><br>
+            Branch Manager<br>
+            </cite>
+        </div>
+    </div> 
+    <br>
+  </div>
+  </div> 
+   
+  <!-- Products section ends -->
+  <!-- Footer starts -->
+  <div class="contact" id="contact">
+    <div class="layer-col">
+      <footer  style="padding:1%; height:100%;">
+
+            <h1 style="text-align:center;">Contact Us</h1> <br>
+            <p></p>
+             <!-- <div class="row">-->
+          <div class="row" style="text-align:center; padding-top:2%;">
+              <div  style="margin-left:20%;width:60%;">
+                  <p style="font-size:25px; line-height:28px;">Any queries or looking for help?<br>Please feel free to contact us through email or phone and we always have someone ready for you and get back to you as soon as possible.</p>
+                  </div>
+                </div>
+                <div class="row" style="margin-bottom:2rem;"> <!--For the contact info row starts-->
+                    <div class="col-lg-1 col-md-1"></div>
+                    <div class="icons-foot col-lg-3 col-md-3" style="text-align:center; padding-left:5%; width:90%" >
+                      <div class="row">
+                         <i class="fa fa-map-marker" id="contact-icons-location" style=" margin-left: 2%;"></i>
+                         <h4 style="margin-botton:1rem; margin-left: 25%;">Location :</h4>
+                         <div id="contact-info" style="margin-botton:1rem; margin-left: 10%;">
+                           Tower B, Level 2, No. 1 & 2,Murphy Road, Ulsoor, Bengaluru,&nbsp;Karnataka 560008
+                         </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-1 col-md-1"></div>
+                    <div class="icons-foot col-lg-3 col-md-3" style="text-align:center;padding-left:5%; width:90%;">
+                      <div class="row">
+                        <i class="fa fa-envelope" id="contact-icons-email" style="margin-right:10%;"></i>
+                        <h4 style="margin-botton:1rem;">Email ID :</h4> <br><br>
+                        <div id="contact-info" style="margin-left: 25%;">abc@gmail.com</div>
+                      </div>
+                    </div>
+                    <div class="icons-foot col-lg-3 col-md-3" style="text-align:center;padding-left:5%; width:90%;">
+                      <div class="row">
+                        <i class="fa fa-phone" id="contact-icons-phone"></i>&nbsp;&nbsp;
+                        <h4 style="margin-bottom:1rem;">Phone No :</h4>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <div id="contact-info" style="margin-left: 20%;">+7788738273
+                        </div>
+                      </div>
+                    </div>
+                </div>
+               <br>
+               <hr align="center" width="50%" style="border:1px solid rgb(33,48,75)"></hr>
+             <div class="social-media-icons soc" style="display:grid;grid-template-columns:repeat(6,5rem);padding-left:30.5%;">
+                 <!-- <div class="offset-3"></div> -->
+                 <div class="soc-med" style="margin-left:0.5rem;">
+                  <i class="fa fa-google"></i>
+                 </div>
+                 <div class="soc-med">
+                   <i class="fa fa-facebook"></i>
+                 </div>
+                 <div class="soc-med">
+                   <i class="fa fa-instagram"></i>
+                 </div>
+                 <div class="soc-med">
+                   <i class="fa fa-linkedin"></i>
+                 </div>
+                 <div class=" soc-med">
+                   <i class="fa fa-youtube"></i>
+                </div>
+                <div class="soc-med">
+                   <i class="fa fa-twitter"></i>
+                 </div>
+                 <!-- <div class="offset-3"></div> -->
+            </div>
+               <hr align="center" width="50%" style="border:1px solid rgb(33,48,75)"></hr>
+       <!-- Footer ends here -->
+  <div class="copyright" style="text-align:center;">
+       &copy; All Rights Reserved by Ciphers
+  </div>
+  </footer>
+  </div>
+  </div>
+  <!-----footer ends here------>
+</div> <!--container end-->
+    <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/form.js' %}"></script>
+    <script>
+
+      var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+    </script>
+</div>
+</body>
+</html>
